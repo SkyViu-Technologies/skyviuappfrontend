@@ -1,0 +1,41 @@
+name: SkyViu
+description: Real-time drone surveillance with telemetry, alerts, and analytics.
+
+version: 1.0.0+1
+
+environment:
+  sdk: '^3.7.0'  # Lower-bound constraint for Dart SDK
+
+dependencies:
+  flutter:
+    sdk: flutter
+  web_socket_channel: ^2.4.0
+  flutter_webrtc: ^0.12.11
+  fl_chart: ^0.63.0
+  provider: ^6.0.0
+  flutter_screenutil: ^5.9.0
+  http: ^1.1.0
+  firebase_messaging: ^14.6.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/aii.png
+    - assets/ken.jpeg
+    - assets/prince.jpeg
+    - assets/aprel.jpeg
+    - assets/mwegs.jpeg
+    - assets/ron.jpeg
+  
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/aii.png"
+  adaptive_icon_background: "#0A0E21"
+  adaptive_icon_foreground: "assets/aii.png"
