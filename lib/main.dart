@@ -42,7 +42,7 @@ class SmartEyeApp extends StatelessWidget {
           elevation: 0,
           selectedItemColor: Colors.cyanAccent,
           unselectedItemColor: Colors.grey,
-          type: BottomNavigationBarType.fixed, // Ensure consistent rendering
+          type: BottomNavigationBarType.fixed, 
         ),
       ),
       initialRoute: '/dashboard',
