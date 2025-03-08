@@ -7,12 +7,7 @@ class AnalyticsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(
-          context,
-          '/analytics',
-        ); // Navigate to AnalyticsScreen
-      },
+      onTap: () => Navigator.pushNamed(context, '/analytics'),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.black.withOpacity(0.7),
@@ -24,58 +19,44 @@ class AnalyticsCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Analytics',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.purpleAccent,
-                ),
-              ),
+              const Text('Analytics',
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.purpleAccent,
+                      fontFamily: 'Orbitron')),
               const SizedBox(height: 10),
               SizedBox(
-                height: 80, // Reduced height to fit within card
+                height: 80,
                 child: BarChart(
                   BarChartData(
                     borderData: FlBorderData(show: false),
                     barGroups: [
-                      BarChartGroupData(
-                        x: 0,
-                        barRods: [
-                          BarChartRodData(
-                            toY: 5,
+                      BarChartGroupData(x: 0, barRods: [
+                        BarChartRodData(
+                            toY: 4,
                             color: Colors.cyanAccent,
                             width: 10,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                        ],
-                      ),
-                      BarChartGroupData(
-                        x: 1,
-                        barRods: [
-                          BarChartRodData(
-                            toY: 8,
+                            borderRadius: BorderRadius.circular(4))
+                      ]),
+                      BarChartGroupData(x: 1, barRods: [
+                        BarChartRodData(
+                            toY: 6,
                             color: Colors.purpleAccent,
                             width: 10,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                        ],
-                      ),
-                      BarChartGroupData(
-                        x: 2,
-                        barRods: [
-                          BarChartRodData(
-                            toY: 3,
+                            borderRadius: BorderRadius.circular(4))
+                      ]),
+                      BarChartGroupData(x: 2, barRods: [
+                        BarChartRodData(
+                            toY: 2,
                             color: Colors.cyanAccent,
                             width: 10,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                        ],
-                      ),
+                            borderRadius: BorderRadius.circular(4))
+                      ]),
                     ],
                     gridData: FlGridData(show: false),
                     titlesData: FlTitlesData(show: false),
-                    maxY: 10, // Set maxY to constrain bars
+                    maxY: 10,
                   ),
                 ),
               ),

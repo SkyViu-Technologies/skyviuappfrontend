@@ -8,21 +8,19 @@ class TelemetryCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Fetching telemetry data...')),
-        );
-        // Backend: Fetch real-time telemetry
+            const SnackBar(content: Text('Fetching telemetry data...')));
+        // Backend: Fetch real-time telemetry via WebSocket
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.black.withOpacity(0.7),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: Colors.cyanAccent.withOpacity(0.3)),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              blurRadius: 10,
-              spreadRadius: 2,
-            ),
+                color: Colors.cyanAccent.withOpacity(0.2),
+                blurRadius: 10,
+                spreadRadius: 2)
           ],
         ),
         child: Padding(
@@ -30,18 +28,16 @@ class TelemetryCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Telemetry',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.cyanAccent,
-                ),
-              ),
+              const Text('Telemetry',
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.cyanAccent,
+                      fontFamily: 'Orbitron')),
               const SizedBox(height: 10),
-              Text('Altitude: 100m', style: _telemetryStyle()),
-              Text('Speed: 5m/s', style: _telemetryStyle()),
-              Text('GPS: 37.7749, -122.4194', style: _telemetryStyle()),
+              Text('Temp: 32°C', style: _telemetryStyle()),
+              Text('Power: 5V', style: _telemetryStyle()),
+              Text('Status: Active', style: _telemetryStyle()),
             ],
           ),
         ),
@@ -50,8 +46,5 @@ class TelemetryCard extends StatelessWidget {
   }
 
   TextStyle _telemetryStyle() => const TextStyle(
-    fontSize: 14,
-    color: Colors.white70,
-    fontFamily: 'RobotoMono',
-  );
+      fontSize: 14, color: Colors.white70, fontFamily: 'RobotoMono');
 }
